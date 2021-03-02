@@ -34,7 +34,7 @@ function getUserInfo() {
             }
             // 调用renderAvatar渲染用户头像
             renderAvatar(res.data)
-        },
+        }
         // 不管成功还是失败，最终都会调用complete回调函数
         // complete: function (res) {
         //     // console.log('执行了回调函数');
@@ -58,9 +58,9 @@ function renderAvatar(user) {
     $('#welcome').html('欢迎&nbsp;&nbsp;' + name)
     // 3、按需渲染用户的头像
     if (user.user_pic !== null) {
-        // 3.1 渲染图片头像
+        // 3.1 渲染图片头像  
+        $('.layui-nav-img').attr('src', user.user_pic).show()
         $('.text-avatar').hide()
-        $('.layui-nav-img').attr('src,user.user_pic').show()
     } else {
         // 3.2 渲染文本头像
         $('.layui-nav-img').hide()
